@@ -4,6 +4,7 @@
 #
 # Copyright 2016, Petr Belyaev <upcfrost@gmail.com>
 #
+default_action :none
 
 # Install options
 attribute :install_method, String, default: node['gliderlabs_registrator']['install_method']
@@ -23,12 +24,11 @@ attribute :deregister, String, default: node['gliderlabs_registrator']['run_opts
 attribute :internal, String, default: node['gliderlabs_registrator']['run_opts']['internal']
 attribute :ip, String, default: node['gliderlabs_registrator']['run_opts']['ip']
 attribute :resync, String, default: node['gliderlabs_registrator']['run_opts']['resync']
-attribute :retry-attempts, String, default: node['gliderlabs_registrator']['run_opts']['retry-attempts']
-attribute :retry-interval, String, default: node['gliderlabs_registrator']['run_opts']['retry-interval']
+attribute :retry_attempts, String, default: node['gliderlabs_registrator']['run_opts']['retry-attempts']
+attribute :retry_interval, String, default: node['gliderlabs_registrator']['run_opts']['retry-interval']
 attribute :tags, String, default: node['gliderlabs_registrator']['run_opts']['tags']
 attribute :ttl, String, default: node['gliderlabs_registrator']['run_opts']['ttl']
-attribute :ttl-refresh, String, default: node['gliderlabs_registrator']['run_opts']['ttl-refresh']
+attribute :ttl_refresh, String, default: node['gliderlabs_registrator']['run_opts']['ttl-refresh']
 
 # Docker-specific options
 attribute :docker_bind, String, default: node['gliderlabs_registrator']['docker_bind']
-

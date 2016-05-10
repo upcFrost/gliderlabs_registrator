@@ -33,8 +33,7 @@ when 'source_docker'
 when 'source'
   include_recipe 'golang::default'
   execute 'Compile registrator' do
-    environment {'GOPATH' => '$GOPATH:/tmp', 'GOBIN' => node['gliderlabs_registrator']['bin_path']}
+    environment 'GOPATH' => '$GOPATH:/tmp', 'GOBIN' => node['gliderlabs_registrator']['bin_path']
     command node['gliderlabs_registrator']['src_command']
   end
 end
-

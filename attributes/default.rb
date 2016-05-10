@@ -31,4 +31,3 @@ default['gliderlabs_registrator']['run_opts']['ttl-refresh'] = nil
 
 # Docker-specific options
 default['gliderlabs_registrator']['docker_bind'] = '/var/run/docker.sock:/tmp/docker.sock'
-
