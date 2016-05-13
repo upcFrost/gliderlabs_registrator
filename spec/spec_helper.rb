@@ -1,6 +1,8 @@
 require 'chefspec'
 require 'chefspec/berkshelf'
 
+ChefSpec::Coverage.start! { add_filter 'gliderlabs_registrator' }
+
 RSpec.configure do |config|
   # Make the output look nice
   config.color = true
