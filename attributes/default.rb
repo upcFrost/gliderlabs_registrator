@@ -12,7 +12,7 @@ default['gliderlabs_registrator']['registrator_tag'] = 'latest'
 default['gliderlabs_registrator']['golang_docker_repo'] = 'golang'
 default['gliderlabs_registrator']['golang_docker_tag'] = 'latest'
 default['gliderlabs_registrator']['bin_path'] = '/usr/local/bin'
-default['gliderlabs_registrator']['src_command'] = 'go get github.com/gliderlabs/registrator'
+default['gliderlabs_registrator']['src_command'] = 'go get -v github.com/gliderlabs/registrator'
 
 # Run options
 default['gliderlabs_registrator']['run_opts']['backend'] = nil

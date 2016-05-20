@@ -24,11 +24,17 @@ when 'source_docker'
   docker_container 'registrator_compile' do
     repo node['gliderlabs_registrator']['golang_docker_repo']
     tag node['gliderlabs_registrator']['golang_docker_tag']
-    volumes node['gliderlabs_registrator']['bin_path']
+    volumes [ format("%s:%s",\
+      node['gliderlabs_registrator']['bin_path'],\
+      node['gliderlabs_registrator']['bin_path']) ]
     working_dir node['gliderlabs_registrator']['bin_path']
     env ["GOBIN=#{node['gliderlabs_registrator']['bin_path']}"]
     command node['gliderlabs_registrator']['src_command']
+    detach false
+    attach_stdout true
+    attach_stderr true
     autoremove true
+    timeout 3600
   end
 when 'source'
   include_recipe 'golang::default'

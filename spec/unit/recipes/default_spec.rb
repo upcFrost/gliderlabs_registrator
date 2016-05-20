@@ -27,7 +27,6 @@ describe 'gliderlabs_registrator::default' do
     it 'should compile the registrator within the golang container' do
       expect(chef_run).to run_docker_container('registrator_compile')
         .with(command: chef_run.node['gliderlabs_registrator']['src_command'])
-        .with(volumes: { chef_run.node['gliderlabs_registrator']['bin_path'] => {} })
         .with(autoremove: true)
     end
   end
