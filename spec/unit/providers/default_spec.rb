@@ -32,7 +32,7 @@ describe 'test::default_provider' do
     end
 
     it 'should write the start script' do
-      expect(chef_run).to create_template("/usr/local/bin/start_registrator.sh")
+      expect(chef_run).to create_template('/usr/local/bin/start_registrator.sh')
     end
   end
 end
