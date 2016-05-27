@@ -29,6 +29,7 @@ describe 'gliderlabs_registrator::default' do
         .with(command: chef_run.node['gliderlabs_registrator']['src_command'])
         .with(detach: false)
         .with(autoremove: true)
+        .with(timeout: 3600)
     end
   end
 
