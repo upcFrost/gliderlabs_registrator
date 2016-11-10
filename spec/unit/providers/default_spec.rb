@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe 'test::default_provider' do
   context 'Given default parameters' do
-    let :chef_run do
-      ChefSpec::ServerRunner.new(step_into: 'gliderlabs_registrator').converge(described_recipe)
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(step_into: ['gliderlabs_registrator']).converge(described_recipe)
     end
 
     it 'should create systemd service template' do
