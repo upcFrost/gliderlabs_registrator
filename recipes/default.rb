@@ -10,12 +10,18 @@
 # Pull the docker image from Docker Hub
 case node['gliderlabs_registrator']['install_method']
 when 'docker'
+  docker_service 'default' do
+    action [:create, :start]
+  end
   docker_image 'gliderlabs/registrator' do
     repo node['gliderlabs_registrator']['registrator_repo']
     tag node['gliderlabs_registrator']['registrator_tag']
     action :pull
   end
 when 'source_docker'
+  docker_service 'default' do
+    action [:create, :start]
+  end
   docker_image 'golang' do
     repo node['gliderlabs_registrator']['golang_docker_repo']
     tag node['gliderlabs_registrator']['golang_docker_tag']
