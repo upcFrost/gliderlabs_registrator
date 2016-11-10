@@ -10,3 +10,13 @@ issues_url       'https://github.com/upcFrost/gliderlabs_registrator/issues'
 
 depends 'docker'
 depends 'golang'
+depends 'yum'
+depends 'apt'
+depends 'zypper'
+
+supports 'redhat', '>= 6.0'
+supports 'centos', '>= 6.0'
+supports 'ubuntu', '>= 14.04'
+supports 'debian', '>= 8.0'
+supports 'fedora', '>= 23'
+supports 'suse'

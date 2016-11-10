@@ -2,13 +2,15 @@
 # Cookbook Name:: gliderlabs_registrator
 # Recipe:: default
 #
-# Copyright (C) 2016 YOUR_NAME
+# Copyright (C) 2016 Petr Belyaev <upcfrost@gmail.com>
 #
 # All rights reserved - Do Not Redistribute
 #
 
 # Pull the docker image from Docker Hub
 case node['gliderlabs_registrator']['install_method']
+when 'package'
+  package 'registrator'
 when 'docker'
   docker_image 'gliderlabs/registrator' do
     repo node['gliderlabs_registrator']['registrator_repo']
