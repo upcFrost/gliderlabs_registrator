@@ -8,6 +8,11 @@ describe 'gliderlabs_registrator::default' do
       end.converge(described_recipe)
     end
 
+    it 'should create and start docker service' do
+      expect(chef_run).to create_docker_service('default')
+      expect(chef_run).to start_docker_service('default')
+    end
+
     it 'should pull the registrator image from the specified repo' do
       expect(chef_run).to pull_docker_image('gliderlabs/registrator')
     end
@@ -18,6 +23,11 @@ describe 'gliderlabs_registrator::default' do
       ChefSpec::ServerRunner.new do |node|
         node.set['gliderlabs_registrator']['install_method'] = 'source_docker'
       end.converge(described_recipe)
+    end
+
+    it 'should create and start docker service' do
+      expect(chef_run).to create_docker_service('default')
+      expect(chef_run).to start_docker_service('default')
     end
 
     it 'should pull the golang image from the docker hub' do
